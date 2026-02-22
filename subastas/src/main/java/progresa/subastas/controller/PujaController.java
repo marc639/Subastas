@@ -23,7 +23,6 @@ public class PujaController {
             pujaService.registrarPuja(pujaDTO);
             return new ResponseEntity<>(new Mensaje("Puja registrada correctamente"), HttpStatus.CREATED);
         } catch (Exception e) {
-            // Si la puja es menor a la actual, aquí se captura el error para mostrarlo en Postman
             return new ResponseEntity<>(new Mensaje(e.getMessage()), HttpStatus.BAD_REQUEST);
         }
     }

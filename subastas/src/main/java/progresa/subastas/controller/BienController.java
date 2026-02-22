@@ -61,7 +61,6 @@ public class BienController {
 
         Bien bien = bienService.getById(id).get();
 
-        // No permitir modificar un bien que ya está en subasta o adjudicado
         if (!bien.getEstado().equals("DISPONIBLE"))
             return new ResponseEntity<>(new Mensaje("No se puede modificar un bien que no esta DISPONIBLE"), HttpStatus.BAD_REQUEST);
 
